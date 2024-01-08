@@ -58,16 +58,18 @@ describe("Triangle", () => {
             expect(scalene.hasValidSideLengths).to.exist;
         })
         it("Should return true of the triangle is Scalene", () => {
-            expect(scalene.isScalene()).to.false;
-            expect(scalene3.isScalene()).to.true;
-            expect(scalene2.isScalene()).to.false;
+            expect(scalene.isScalene()).to.be.true;
+            expect(scalene3.isScalene()).to.be.false;
+            expect(scalene2.isScalene()).to.be.true;
         })
-        it("Should add validate property to Scalene triangle", () => {
+        it("Should add isValidScalene property to Scalene triangle", () => {
             scalene.validate();
+            scalene3.validate();
+            scalene2.validate();
             expect(scalene.isValidScalene).to.exist;
-            expect(scalene3.isValidScalene).to.true;
             expect(scalene3.isValidScalene).to.false;
             expect(scalene2.isValidScalene).to.exist;
+            expect(scalene2.isValidScalene).to.be.true;
         })
         context("If it is Isosceles triangle", () => {
             let isosceles = new Isosceles(3, 4, 6);
