@@ -32,6 +32,13 @@ class Scalene extends Triangle {
     constructor(side1, side2, side3) {
         super(side1, side2, side3)
     }
+    isScalene() {
+        if (this.side1 !== this.side2 && this.side1 != this.side3) return true;
+        return false;
+    }
+    validate() {
+        this.isValidScalene = this.isScalene();
+    }
 
 }
 class Isosceles extends Scalene {
